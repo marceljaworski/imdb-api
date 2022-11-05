@@ -1,9 +1,10 @@
 import './App.css';
 import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Movies from './components/Movies';
+import MovieCard from './components/MovieCard';
 import Button from 'react-bootstrap/Button';
 
 
@@ -35,17 +36,22 @@ function App() {
 
   return (
     <div className="App">
-      <h5>IMDB API</h5>
-      <input className='input' type="text" value={searchText} onChange={(e) => handleSearch(e)} /><Button variant="warning" onClick={clickHandler}>Search</Button>
+      <div className='searchContainer'>
+        <h2>IMDB API</h2>
+        <input className='input' type="text" value={searchText} onChange={(e) => handleSearch(e)} /><Button variant="warning" onClick={clickHandler}>Search</Button>
+
+      </div>
       {data.length > 0 &&
+      <Container>
         <Row>
           {data.map((el, index)=> (
             <Col key={index}>
-                <Movies movieId={el.imdbID} />
+                <MovieCard movieId={el.imdbID} />
               </Col>
             )
             )}
         </Row>
+      </Container>
       } 
       {/* <h3>You found {data.length} movies</h3> */}
     </div>

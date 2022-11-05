@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import { useState, useEffect } from "react"
 
-export default function Movies ({movieId}) {
+export default function MovieCard ({movieId}) {
     const [movie, setMovie] = useState({})
     console.log(movie)
     useEffect(()=>{
@@ -17,15 +17,12 @@ export default function Movies ({movieId}) {
    
     return (
         <Card className="bg-dark text-white">
-        <Card.Img src={movie["Poster"]} alt="Card image" />
-        <Card.ImgOverlay>
-          <Card.Title>{movie["Title"]}</Card.Title>
-          <Card.Text>{movie["Released"]}
-            
-          </Card.Text>
-          <Card.Text>{movie["imdbRating"]}/10</Card.Text>
-        </Card.ImgOverlay>
-      </Card>
+            <Card.Img src={movie["Poster"]} alt="Card image" />
+            <Card.ImgOverlay>
+                <Card.Title>{movie["Title"]}</Card.Title>
+                <Card.Text>IMDB Rating - {movie["imdbRating"]}/10</Card.Text>
+            </Card.ImgOverlay>
+        </Card>
         
     )
 }
