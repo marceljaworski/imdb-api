@@ -38,7 +38,7 @@ function App() {
     <div className="App">
       <div className='searchContainer'>
         <h2>IMDB API</h2>
-        <input placeholder='  film Title' className='input' type="text" value={searchText} onChange={(e) => handleSearch(e)} /><Button variant="warning" onClick={clickHandler}>Search</Button>
+        <input placeholder=' Film Title' className='input' type="text" value={searchText} onChange={(e) => handleSearch(e)} /><Button variant="warning" onClick={clickHandler}>Search</Button>
 
       </div>
       {data.length > 0 &&
