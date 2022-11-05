@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Movies from './components/Movies';
+import Button from 'react-bootstrap/Button';
 
 
 function App() {
@@ -34,19 +35,19 @@ function App() {
 
   return (
     <div className="App">
-      <h2>data IMDB</h2>
-      <input type="text" value={searchText} onChange={(e) => handleSearch(e)} /><button onClick={clickHandler}>Search</button>
-      <h2>You found {data.length} movies</h2>
+      <h5>IMDB API</h5>
+      <input className='input' type="text" value={searchText} onChange={(e) => handleSearch(e)} /><Button variant="warning" onClick={clickHandler}>Search</Button>
       {data.length > 0 &&
         <Row>
           {data.map((el, index)=> (
-              <Col key={index}>
+            <Col key={index}>
                 <Movies movieId={el.imdbID} />
               </Col>
             )
-          )}
+            )}
         </Row>
       } 
+      {/* <h3>You found {data.length} movies</h3> */}
     </div>
     
   );
