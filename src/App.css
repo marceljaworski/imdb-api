@@ -23,8 +23,8 @@ p {
   margin-left: 0.3rem;
 }
 .card {
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
   margin-bottom: 1rem;
   width: 38rem;
-   text-align: center;
+  text-align: center;
 }
