@@ -36,13 +36,15 @@ function App() {
 
   return (
     <div className="App">
+      
+      <Container>
       <div className='searchContainer'>
         <h2>IMDB API</h2>
         <input placeholder=' Film Title' className='input' type="text" value={searchText} onChange={(e) => handleSearch(e)} /><Button variant="warning" onClick={clickHandler}>Search</Button>
-
+         
       </div>
-      {data.length > 0 &&
-      <Container>
+      
+      {data.length > 0 && <p>you found {data.length} movies</p> }
         <Row>
           {data.map((el, index)=> (
             <Col key={index}>
@@ -52,8 +54,7 @@ function App() {
             )}
         </Row>
       </Container>
-      } 
-      {/* <h3>You found {data.length} movies</h3> */}
+      
     </div>
     
   );

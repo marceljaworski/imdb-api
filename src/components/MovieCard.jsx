@@ -18,10 +18,10 @@ export default function MovieCard ({movieId}) {
     return (
         <Card className="bg-dark text-white">
             <Card.Img src={movie["Poster"]} alt="Card image" />
-            <Card.ImgOverlay>
+            <Card.Body>
                 <Card.Title>{movie["Title"]}</Card.Title>
-                <Card.Text>IMDB Rating - {movie["imdbRating"]}/10</Card.Text>
-            </Card.ImgOverlay>
+                 <Card.Text>{movie["Released"]} - imdbRating: {movie["imdbRating"]}/10</Card.Text>
+            </Card.Body>
         </Card>
         
     )
